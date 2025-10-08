@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Search } from 'lucide-react';
+import { Search, ChevronDown } from 'lucide-react';
 
 export default function Hero() {
   const [currentWord, setCurrentWord] = useState('');
@@ -40,9 +40,28 @@ export default function Hero() {
     return () => clearTimeout(timer);
   }, [currentWord, wordIndex, isDeleting]);
 
+  const scrollToNextSection = () => {
+    const nextSection = document.querySelector('#next-section');
+    if (nextSection) {
+      nextSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
-    <section id="home" className="relative bg-brand-dark pt-32 pb-20 min-h-[600px] flex items-center">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+    <section id="home" className="relative bg-brand-dark pt-32 pb-20 min-h-screen flex items-center overflow-hidden">
+      <video
+        autoPlay
+        loop
+        muted
+        playsInline
+        className="absolute inset-0 w-full h-full object-cover opacity-40"
+      >
+        <source src="/videos/Y-The-Brokers-Video-Website-1.mp4" type="video/mp4" />
+      </video>
+
+      <div className="absolute inset-0 bg-gradient-to-b from-brand-dark/60 via-brand-dark/40 to-brand-dark/80"></div>
+
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
         <div className="text-center">
           <h1 className="text-5xl md:text-7xl font-bold mb-12">
             <span className="text-white">Explore </span>
@@ -52,7 +71,7 @@ export default function Hero() {
             </span>
           </h1>
 
-          <div className="max-w-3xl mx-auto">
+          <div className="max-w-3xl mx-auto mb-16">
             <div className="relative">
               <input
                 type="text"
@@ -65,6 +84,14 @@ export default function Hero() {
               </button>
             </div>
           </div>
+
+          <button
+            onClick={scrollToNextSection}
+            className="group flex flex-col items-center gap-2 mx-auto text-white hover:text-brand-orange transition-colors duration-300"
+          >
+            <span className="text-sm font-medium uppercase tracking-wide">Scroll Down</span>
+            <ChevronDown className="w-6 h-6 animate-bounce" />
+          </button>
         </div>
       </div>
     </section>
