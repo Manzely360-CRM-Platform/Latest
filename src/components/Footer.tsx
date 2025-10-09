@@ -22,11 +22,15 @@ export default function Footer() {
         </div>
 
         <div className="max-w-4xl mx-auto text-center mb-16">
-          <h3 className="text-2xl font-bold mb-4">
-            <span className="text-brand-orange">Y</span> THE BROKERS
-          </h3>
+          <div className="flex items-center justify-center mb-6">
+            <img
+              src="/images/partners/stamp-white-300x300.png"
+              alt="Y The Brokers"
+              className="h-32 w-auto object-contain"
+            />
+          </div>
           <p className="text-gray-300 leading-relaxed text-lg">
-            <span className="text-brand-orange">Y</span> The Brokers is the first certified brokerage in the real estate sector. Aiming to always provide our client base with the most beneficial real estate decisions. <span className="text-brand-orange">Y</span> The Brokers offers the clients in the real estate market the full range of required real estate services.
+            <span className="text-brand-orange">Y</span> The Brokers is the first certified brokerage in the real estate sector. Aiming to always provide our client base with the most beneficial real estate decisions. Y The Brokers offers the clients in the real estate market the full range of required real estate services.
           </p>
         </div>
 

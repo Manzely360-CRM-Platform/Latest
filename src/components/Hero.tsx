@@ -7,7 +7,7 @@ export default function Hero() {
   const [isDeleting, setIsDeleting] = useState(false);
   const [showCursor, setShowCursor] = useState(true);
 
-  const words = ['COMMERCIAL', 'RESIDENTIAL', 'COASTAL'];
+  const words = ['RESIDENTIAL', 'COMMERCIAL', 'COASTAL', 'SHEHAB'];
 
   useEffect(() => {
     const cursorInterval = setInterval(() => {
@@ -64,7 +64,7 @@ export default function Hero() {
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
         <div className="text-center">
           <h1 className="text-5xl md:text-7xl font-bold mb-12">
-            <span className="text-white">Explore </span>
+            <span className="text-white">Explore: </span>
             <span className="text-brand-orange">
               {currentWord}
               {showCursor && <span className="text-brand-orange">|</span>}

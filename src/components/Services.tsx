@@ -6,6 +6,7 @@ export default function Services() {
       icon: Building2,
       title: 'Commercial',
       description: 'Explore premium commercial properties for your business needs.',
+      image: 'https://images.pexels.com/photos/380769/pexels-photo-380769.jpeg?auto=compress&cs=tinysrgb&w=1200',
       gradient: 'from-blue-500/20 to-cyan-500/20',
       hoverGradient: 'group-hover:from-blue-500/30 group-hover:to-cyan-500/30',
     },
@@ -13,6 +14,7 @@ export default function Services() {
       icon: Home,
       title: 'Residential',
       description: 'Find your dream home in the finest residential developments.',
+      image: 'https://images.pexels.com/photos/106399/pexels-photo-106399.jpeg?auto=compress&cs=tinysrgb&w=1200',
       gradient: 'from-orange-500/20 to-amber-500/20',
       hoverGradient: 'group-hover:from-orange-500/30 group-hover:to-amber-500/30',
     },
@@ -20,6 +22,7 @@ export default function Services() {
       icon: Waves,
       title: 'Coastal',
       description: 'Discover luxurious beachfront and coastal properties.',
+      image: 'https://images.pexels.com/photos/189349/pexels-photo-189349.jpeg?auto=compress&cs=tinysrgb&w=1200',
       gradient: 'from-teal-500/20 to-emerald-500/20',
       hoverGradient: 'group-hover:from-teal-500/30 group-hover:to-emerald-500/30',
     },
@@ -63,13 +66,18 @@ export default function Services() {
               return (
                 <div
                   key={index}
-                  className="group relative bg-gradient-to-br from-gray-800 to-gray-900 rounded-2xl p-8 overflow-hidden cursor-pointer transform transition-all duration-500 hover:scale-105 hover:shadow-2xl hover:shadow-brand-orange/20"
+                  className="group relative rounded-2xl overflow-hidden cursor-pointer transform transition-all duration-500 hover:scale-105 hover:shadow-2xl hover:shadow-brand-orange/20 h-96"
                 >
-                  <div className={`absolute inset-0 bg-gradient-to-br ${type.gradient} ${type.hoverGradient} transition-all duration-500`}></div>
+                  <div
+                    className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110"
+                    style={{ backgroundImage: `url(${type.image})` }}
+                  ></div>
 
-                  <div className="relative z-10">
-                    <div className="flex justify-center mb-6 transform transition-transform duration-500 group-hover:scale-110 group-hover:rotate-6">
-                      <div className="w-20 h-20 rounded-full bg-brand-orange/20 flex items-center justify-center backdrop-blur-sm group-hover:bg-brand-orange/30 transition-colors duration-300">
+                  <div className="absolute inset-0 bg-gradient-to-b from-brand-dark/60 via-brand-dark/70 to-brand-dark/90 group-hover:from-brand-dark/40 group-hover:via-brand-dark/60 group-hover:to-brand-dark/80 transition-all duration-500"></div>
+
+                  <div className="relative z-10 h-full flex flex-col items-center justify-center p-8">
+                    <div className="flex justify-center mb-6 transform transition-transform duration-500 group-hover:scale-110">
+                      <div className="w-20 h-20 rounded-full bg-brand-orange/20 flex items-center justify-center backdrop-blur-sm group-hover:bg-brand-orange/40 transition-colors duration-300 border-2 border-brand-orange/30">
                         <Icon className="w-10 h-10 text-brand-orange" />
                       </div>
                     </div>
@@ -78,12 +86,12 @@ export default function Services() {
                       {type.title}
                     </h3>
 
-                    <p className="text-gray-300 text-center leading-relaxed">
+                    <p className="text-gray-200 text-center leading-relaxed mb-6">
                       {type.description}
                     </p>
 
-                    <div className="mt-6 flex justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                      <button className="text-brand-orange font-medium flex items-center gap-2 group-hover:gap-3 transition-all duration-300">
+                    <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                      <button className="bg-brand-orange hover:bg-brand-orange-hover text-white px-6 py-3 rounded-full font-medium flex items-center gap-2 transition-all duration-300">
                         Explore Now
                         <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
