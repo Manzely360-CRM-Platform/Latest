@@ -71,7 +71,7 @@ export default function Hero() {
             </span>
           </h1>
 
-          <div className="max-w-3xl mx-auto mb-16">
+          <div className="max-w-3xl mx-auto mb-20">
             <div className="relative">
               <input
                 type="text"
@@ -89,7 +89,7 @@ export default function Hero() {
             onClick={scrollToNextSection}
             className="group flex flex-col items-center gap-2 mx-auto text-white hover:text-brand-orange transition-colors duration-300"
           >
-            <span className="text-sm font-medium uppercase tracking-wide">Scroll Down</span>
+            <span className="text-sm font-medium uppercase tracking-wide">Explore Now</span>
             <ChevronDown className="w-6 h-6 animate-bounce" />
           </button>
         </div>
