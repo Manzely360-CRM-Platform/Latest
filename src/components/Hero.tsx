@@ -63,9 +63,9 @@ export default function Hero() {
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
         <div className="text-center">
-          <h1 className="text-5xl md:text-7xl font-bold mb-12">
-            <span className="text-white">Explore: </span>
-            <span className="text-brand-orange">
+          <h1 className="text-5xl md:text-7xl font-bold mb-12 flex items-center justify-center gap-4">
+            <span className="text-white">Explore:</span>
+            <span className="text-brand-orange inline-block min-w-[400px] md:min-w-[600px] text-left">
               {currentWord}
               {showCursor && <span className="text-brand-orange">|</span>}
             </span>
